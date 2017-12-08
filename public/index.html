@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="./stylesheets/style.css">
+
+<title>Site generator!</title>
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="javascripts/sites.js"></script>
+</head>
+
+<body>
+  <div class="bg">
+    <div class="container" style="padding-top: 20px;">
+      <form id="siteForm" action="" class="form-inline" style="display: inline-block; text-align: center;">
+        <div class="form-group has-error has-feedback">
+          <label for="uriInput" class="sr-only">Site Name: </label>
+          <input required class="form-control" type="text" id="uriInput" placeholder="URI String" style="margin:15px;"><br>
+        </div>
+        <div class="form-group">
+          <label for="bioInput" class="sr-only">Short Bio: </label>
+          <input required class="form-control" type="text" id="bioInput" placeholder="Bio" style="margin: 15px;"><br>
+        </div>
+        <div class="form-group">
+          <label for="imgURLInput" class="sr-only">Image: </label>
+          <input required class="form-control" type="text" id="imgURLInput" placeholder="Image in URL form" style="margin: 15px;"><br>
+        </div>
+        <div class="form-group">
+          <input required class="form-control" type="text" id="pwdInput" placeholder="Password to alter page" style="margin:15px;"><br>
+        </div>
+      </form>
+      <div style="padding: 10px;">
+        <button id="createSite" class="btn btn-default btn-lg btn-block">CREATE</button>
+        <button type="button" class="btn btn-default btn-lg btn-block" onclick="document.getElementById('cardList').scrollIntoView();">Browse Created sites</button>
+      </div>
+      <div id="formError"></div>
+      <div class="container" style="padding-top:40px" id="cardList"></div>
+    </div>
+  </div>
+</body>
+</html>

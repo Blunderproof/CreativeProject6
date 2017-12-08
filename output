@@ -1,0 +1,77 @@
+nohup: ignoring input
+Connected
+[0mGET / [36m304 [0m5.745 ms - -[0m
+[0mGET /javascripts/comments.js [36m304 [0m1.427 ms - -[0m
+[]
+[0mGET /comment [32m200 [0m16.776 ms - 2[0m
+[]
+[0mGET /comment [36m304 [0m5.917 ms - -[0m
+POST comment route
+{ Name: 'asdf', Comment: 'asdf' }
+{ Name: 'asdf', Comment: 'asdf', _id: 5a068d54d375530166f2691d }
+(node:358) DeprecationWarning: Mongoose: mpromise (mongoose's default promise library) is deprecated, plug in your own promise library instead: http://mongoosejs.com/docs/promises.html
+{ __v: 0,
+  Name: 'asdf',
+  Comment: 'asdf',
+  _id: 5a068d54d375530166f2691d }
+[0mPOST /comment [32m200 [0m37.366 ms - 2[0m
+[ { _id: 5a068d54d375530166f2691d,
+    Name: 'asdf',
+    Comment: 'asdf',
+    __v: 0 } ]
+[0mGET /comment [32m200 [0m4.851 ms - 75[0m
+[0mGET / [36m304 [0m0.591 ms - -[0m
+[0mGET /javascripts/comments.js [36m304 [0m0.383 ms - -[0m
+[ { _id: 5a068d54d375530166f2691d,
+    Name: 'asdf',
+    Comment: 'asdf',
+    __v: 0 } ]
+[0mGET /comment [36m304 [0m4.432 ms - -[0m
+Collection deleted
+[0mGET /deleteAll [32m200 [0m8.930 ms - 2[0m
+POST comment route
+{ Name: 'Me', Comment: 'Hello TAs!!' }
+{ Name: 'Me',
+  Comment: 'Hello TAs!!',
+  _id: 5a068d62d375530166f2691e }
+{ __v: 0,
+  Name: 'Me',
+  Comment: 'Hello TAs!!',
+  _id: 5a068d62d375530166f2691e }
+[0mPOST /comment [32m200 [0m7.248 ms - 2[0m
+[ { _id: 5a068d62d375530166f2691e,
+    Name: 'Me',
+    Comment: 'Hello TAs!!',
+    __v: 0 } ]
+[0mGET /comment [32m200 [0m3.486 ms - 80[0m
+POST comment route
+{ Name: 'Me',
+  Comment: 'You guys are really cool, you know that?' }
+{ Name: 'Me',
+  Comment: 'You guys are really cool, you know that?',
+  _id: 5a068d6cd375530166f2691f }
+{ __v: 0,
+  Name: 'Me',
+  Comment: 'You guys are really cool, you know that?',
+  _id: 5a068d6cd375530166f2691f }
+[0mPOST /comment [32m200 [0m2.854 ms - 2[0m
+[ { _id: 5a068d62d375530166f2691e,
+    Name: 'Me',
+    Comment: 'Hello TAs!!',
+    __v: 0 },
+  { _id: 5a068d6cd375530166f2691f,
+    Name: 'Me',
+    Comment: 'You guys are really cool, you know that?',
+    __v: 0 } ]
+[0mGET /comment [32m200 [0m3.021 ms - 188[0m
+[0mGET / [36m304 [0m1.343 ms - -[0m
+[0mGET /javascripts/comments.js [36m304 [0m0.395 ms - -[0m
+[ { _id: 5a068d62d375530166f2691e,
+    Name: 'Me',
+    Comment: 'Hello TAs!!',
+    __v: 0 },
+  { _id: 5a068d6cd375530166f2691f,
+    Name: 'Me',
+    Comment: 'You guys are really cool, you know that?',
+    __v: 0 } ]
+[0mGET /comment [36m304 [0m3.223 ms - -[0m

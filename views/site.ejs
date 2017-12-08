@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <head>
+    <title><%= title%></title>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+  </head>
+  <body>
+    <div class="container" style="padding-top: 20px; background-color: #777;">
+     <div class="jumotron">
+      <img src="<%= img%>" style=" display: block; margin: auto; width: 60%;">
+      <a href="/" class="btn btn-lg btn-block btn-info" style="margin-top:20px;" > Return to Main Site</a> 
+      <button data-toggle="modal" data-target="#myModal" class="btn btn-lg btn-block btn-warning"> Delete this Stub</a>
+     </div>
+      <h1><%= title%></h1>
+      <p style="padding-bottom: 30px;"><%= bio %></p>
+      
+    
+    <!-- Trigger the modal with a button -->
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Modal Header</h4>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <input required class="form-control" type="text" id="passwordInput" placeholder="Site Creator's password">
+        </div>
+        <div class="alert alert-warning" id="wrongPassMessage" style="visibility: hidden;"> That password is incorrect</div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-info" id="deletePage"> Delete</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</div>
+  </body>
+
+<script>
+  $(document).ready(function(){  
+    $('#deletePage').click(function () {
+      var type = "delete";
+      console.log("HEEEEEEEEEEEEEEEEEEEY");
+      var password = $('#passwordInput').val();
+      console.log("PASSWORD ENTRY: ", password);
+      alter(password, type)
+    });
+  });
+
+
+function alter(enteredPassword, type){ 
+  
+  if(enteredPassword == <%- JSON.stringify(password) %>){
+    $.ajax({ 
+      url: "/site/"+ <%- JSON.stringify(title) %>+ "/" + enteredPassword + "/" + type, 
+      type: "POST", 
+      dataType: 'json',  
+      complete: function(data) { 
+        console.log("DELETED FROM ALTER FUNCTION");
+        $(location).attr('href', '/');
+      } 
+    });
+  } else{
+   document.getElementById("wrongPassMessage").style.visibility =  "visible"; 
+  }
+}
+</script>
+</html>
+
